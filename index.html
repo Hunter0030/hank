@@ -103,7 +103,13 @@
         // 自动播放背景音乐
         const audio = document.getElementById('backgroundMusic');
         audio.play().catch(err => {
-            console.log('音频自动播放失败，请点击页面以播放音乐。');
+            console.log('音频自动播放失败，可能是因为浏览器限制。');
+            // 添加提示用户点击页面以播放音乐
+            const message = document.createElement('p');
+            message.style.color = 'red';
+            message.style.fontSize = '1.2em';
+            message.textContent = '请点击页面以播放音乐。';
+            document.querySelector('.container').appendChild(message);
         });
 
         // 点击页面时播放音乐（解决自动播放限制）
