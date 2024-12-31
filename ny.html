@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年祝福</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url('1d589b40daee7f824c6b1f2c3fdbaa5f.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: none; /* 移除阴影 */
+            max-width: 90%;
+            position: relative;
+            z-index: 1;
+        }
+        h1, p {
+            color: yellow; /* 改为黄色 */
+            font-size: 32px; /* 统一字体大小 */
+        }
+        h1 {
+            font-size: 32px; /* 保持一致 */
+            animation: none; /* 移除动画 */
+        }
+        p {
+            font-size: 32px; /* 统一字体大小 */
+            color: yellow; /* 改为黄色 */
+        }
+        /* 移除烟花动画 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 新年快乐！🎉</h1>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // 生成新年祝福语
+        const message = `
+            <strong>元旦快乐！🍾</strong><br><br>
+            愿新的一年带给你无尽的喜悦和成功！<br>
+            愿你的生活像这璀璨的烟花一样，绚烂夺目！<br>
+            让我们共同迎接新的一年，携手创造更美好的未来！🚀✨
+        `;
+        document.getElementById('message').innerHTML = message;
+
+        // 移除烟花特效
+        // 不再需要添加烟花动画的javascript代码
+    </script>
+</body>
+</html>
