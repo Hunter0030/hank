@@ -1,122 +1,190 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生日祝福</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffd700;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            max-width: 90%;
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            color: #ff6f61;
-            animation: bounce 1.5s infinite;
-        }
-        p {
-            font-size: 1.2em;
-            color: #333;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff6f61;
-            animation: confetti-fall 5s linear infinite;
-        }
-        @keyframes confetti-fall {
-            0% { transform: translateY(-100vh) rotate(0deg); }
-            100% { transform: translateY(100vh) rotate(360deg); }
-        }
-    </style>
+	<title>Happy Birthday</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Happy Birthday Xola">
+	<meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Birthday, Happy">
+    <!-- Strat of Facebook Meta -->
+    <meta property="og:type" content="E-Greeting" />
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:description" content="Wish you a very Happy Birthday">
+    <!-- End of Facebook Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="loading.css">
+	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet/less" href="cake.less">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
 </head>
-<body>
-    <!-- 背景音乐 -->
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="The KiboomersWendy Wiseman - Happy Birthday To You [qmms2].mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-    </audio>
 
-    <!-- 生日祝福内容 -->
-    <div class="container">
-        <h1>🎉 生日快乐！🎉</h1>
-        <p id="message"></p>
+<body>
+	<div class="loading"></div>
+	<audio class="song" controls loop>
+        <source src="The KiboomersWendy Wiseman - Happy Birthday To You [qmms2].mp3"></source>
+	   Your browser isn't invited for super fun audio time.
+    </audio>
+    <div class="balloons text-center" id="b1">
+    	<h2 style="color:#F2B300;">F</h2>
+    </div>
+    <div class="balloons text-center" id="b2">
+    	<h2 style="color:#0719D4;">J</h2>
+    </div>
+	<div class="balloons text-center" id="b3">
+    	<h2 style="color:#D14D39;">Y/R</h2>
+    </div>
+	<div class="balloons text-center" id="b4">
+    	<h2 style="color:#8FAD00;">S</h2>
+    </div>
+	<div class="balloons text-center" id="b5">
+    	<h2 style="color:#8377E4;">R</h2>
+    </div>
+    <div class="balloons text-center" id="b6">
+    	<h2 style="color:#99C96A;">K</h2>
+    </div>
+    <div class="balloons text-center" id="b7">
+    	<h2 style="color:#20CFB4;">L</h2>
     </div>
 
-    <!-- 动态彩纸特效 -->
-    <div id="confettiContainer"></div>
+    <img src="Balloon-Border.png" width="100%" class="balloon-border">
+ 
 
-    <script>
-        // 直接指定名字和年龄
-        const name = "小明"; // 修改为你想要的名字
-        const age = 25; // 修改为你想要的年龄
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_yellow"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_red"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_blue"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_green"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_pink"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_orange"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<img src="banner.png" class="bannar">
+			</div>
+		</div>
+		<div class="row cake-cover">
+			<div class="col-md-12 texr-center">
+				<div class="cake">
+				  <div class="velas">
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				  </div>
+				  <div class="cobertura"></div>
+				  <div class="bizcocho"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row message">
+			<div class="col-md-12">
+				<p>春风轻拂万物苏</p>
+				<p>双子生辰共欢愉</p>
+				<p>天生一对并蒂莲</p>
+				<p>同享今日好时光</p>
+				<p>姐俩相伴情意深</p>
+				<p>姐妹同心共长青</p>
+				<p>双燕比翼飞天地</p>
+				<p>同乐同欢共此生</p>
+				<p>春风送暖花开时</p>
+				<p>双子星辉照梦途</p>
+				<p>生日烛光映笑容</p>
+				<p>甜蜜幸福暖心窝</p>
+				<p>双眸闪烁智慧光</p>
+				<p>姐妹情深似海洋</p>
+				<p>愿你今日多喜乐</p>
+				<p>明日之途更辉煌</p>
+				<p>双生花儿并蒂开</p>
+				<p>同庆今日好时光</p>
+				<p>岁月如歌情长在</p>
+				<p>生日快乐愿常在</p>
+				<p>姐妹双花映朝阳</p>
+				<p>同享今日好时光</p>
+				<p>愿你前路多光彩</p>
+				<p>幸福安康永相随</p>
+				<p>双星闪耀夜空明</p>
+				<p>姐妹情深似海深</p>
+				<p>同庆生辰心相守</p>
+				<p>愿你幸福到永久</p>
+				<p>双子天赋显聪颖</p>
+				<p>姐妹共谱锦绣篇</p>
+				<p>生辰之日愿快乐</p>
+				<p>幸福时光常相伴</p>
+				<p>双花绽放满园香</p>
+				<p>姐妹情深意未央</p>
+				<p>生日烛光照双面</p>
+				<p>愿你幸福到永远</p>
+				<p>双辉映照心田暖</p>
+				<p>同庆生辰喜年年</p>
+				<p>生日快乐愿常在</p>
+				<p>幸福安康乐无边</p>
+			</div>
+		</div>
+		<div class="navbar navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-md-6 text-center col-md-offset-3">
+					<button class="btn btn-primary" id="turn_on">开灯</button>
+					<button class="btn btn-primary" id="play">播放音乐</button>
+					<button class="btn btn-primary" id="bannar_coming">让我们装饰一下</button>
+					<button class="btn btn-primary" id="balloons_flying">乘坐气球风行</button>
+					<button class="btn btn-primary" id="cake_fadein">蛋糕</button>
+					<button class="btn btn-primary" id="light_candle"> 蜡烛</button>
+					<button class="btn btn-primary" id="wish_message">生日快乐</button>
+					<button class="btn btn-primary" id="story">给你的生日祝福</button>
+					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
+				</div>
+			</div>
+			<!-- <div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div> -->
+		</div>
 
-        // 生成祝福语
-        const birthdayMessage = `
-            <strong>，祝你生日快乐！🎂🎁</strong><br><br>
-            愿你在新的一年里：<br>
-            - 每天开心笑哈哈！<br>
-            - 事业学业双丰收！<br>
-            - 梦想成真不遥远！<br>
-            愿你的每一天都像今天一样快乐！😊🎉
-        `;
 
-        // 显示祝福语
-        document.getElementById('message').innerHTML = birthdayMessage;
-
-        // 动态彩纸特效
-        const confettiContainer = document.getElementById('confettiContainer');
-        for (let i = 0; i < 100; i++) {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            confetti.style.left = `${Math.random() * 100}vw`;
-            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            confettiContainer.appendChild(confetti);
-        }
-
-        // 自动播放背景音乐
-        const audio = document.getElementById('backgroundMusic');
-        audio.play().catch(err => {
-            console.log('音频自动播放失败，可能是因为浏览器限制。');
-            // 添加提示用户点击页面以播放音乐
-            const message = document.createElement('p');
-            message.style.color = 'red';
-            message.style.fontSize = '1.2em';
-            message.textContent = '请点击页面以播放音乐。';
-            document.querySelector('.container').appendChild(message);
-        });
-
-        // 点击页面时播放音乐（解决自动播放限制）
-        document.body.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-    </script>
+	</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="effect.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58229732-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </html>
